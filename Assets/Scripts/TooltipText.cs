@@ -22,7 +22,7 @@ public class TooltipText : MonoBehaviour
         var ppl = x.hackers;
 
         string pplStr = ppl.ToString();
-        string areaFtStr = areafoot.ToString();
+      string areaFtStr = areafoot.ToString();
         string areaMStr = areamet.ToString();
 
         gameObject.GetComponent<TextMeshPro>().text = Label.name + "\n" + areaMStr + " m2 | " + areaFtStr + " sf | " + pplStr + " hackers";
