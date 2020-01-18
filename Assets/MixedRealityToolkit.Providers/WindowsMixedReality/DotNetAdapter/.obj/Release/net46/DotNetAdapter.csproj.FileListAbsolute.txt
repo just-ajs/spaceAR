@@ -10,3 +10,15 @@ C:\Users\mobile\Documents\GitHub\spaceAR-v01\Assets\MixedRealityToolkit.Provider
 C:\Users\mobile\Documents\GitHub\spaceAR-v01\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\System.Numerics.Vectors.dll
 C:\Users\mobile\Documents\GitHub\spaceAR-v01\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csprojAssemblyReference.cache
 C:\Users\mobile\Documents\GitHub\spaceAR-v01\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csproj.CopyComplete
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef.meta
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs.meta
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT.dll.meta
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\System.Numerics.Vectors.dll.meta
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\Microsoft.Windows.MixedReality.DotNetWinRT.dll
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\Plugins\net46\System.Numerics.Vectors.dll
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csprojAssemblyReference.cache
+C:\Users\mobile\Documents\GitHub\spaceAR\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csproj.CopyComplete
