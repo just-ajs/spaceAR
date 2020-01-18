@@ -119,8 +119,10 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         else
         {
+            historyStep = 1f;
             if (runningTimestamp)
             {
+
                 for (int i = 0; i < objects.Length; i++)
                 {
                     objects[i].transform.position = timeLine[timeLine.Count-1].positions[i];
