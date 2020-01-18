@@ -9,17 +9,13 @@ namespace Assets.Scripts
 {
     public class Timestamp
     {
-        public Vector3[] positions;
-        public Vector3[] scale;
+        Vector3[] positions;
+        Vector3[] scale;
 
-        public float[] scores;
+        float[] scores;
 
         public Timestamp(GameObject[] o, float[] scores)
         {
-            positions = new Vector3[o.Length];
-            scale = new Vector3[o.Length];
-            scores = new float[o.Length];
-
             positions = GetPositions(o);
             scale = GetScale(o);
 
@@ -27,13 +23,13 @@ namespace Assets.Scripts
         }
 
 
-        Vector3[] GetPositions (GameObject[] o)
+        Vector3[] GetPositions(GameObject[] o)
         {
             var pos = new Vector3[o.Length];
 
             for (int i = 0; i < o.Length; i++)
             {
-                pos[i] = o[i].transform.position;
+                positions[i] = o[i].transform.position;
             }
 
             return pos;
@@ -42,14 +38,14 @@ namespace Assets.Scripts
 
         Vector3[] GetScale(GameObject[] o)
         {
-            var sc = new Vector3[o.Length];
+            var pos = new Vector3[o.Length];
 
             for (int i = 0; i < o.Length; i++)
             {
-                sc[i] = o[i].transform.localScale;
+                positions[i] = o[i].transform.localScale;
             }
 
-            return sc;
+            return pos;
         }
     }
 }
