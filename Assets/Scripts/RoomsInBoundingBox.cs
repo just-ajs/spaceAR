@@ -47,7 +47,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     float scaleMax = 1;
 
     float targetScaleMin = 0.80f;
-    float targetScaleMax = -0.80f;
+    float targetScaleMax = -0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -110,7 +110,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         for (int i = 0; i < scores.Length; i++)
         {
-            sliders[i] = Object.Instantiate(slider, new Vector3((0.1f*i) - 1 , 0, 3), new Quaternion());
+            sliders[i] = Object.Instantiate(slider, new Vector3((0.1f*i) - 0.4f , 0, 3), new Quaternion());
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
         }

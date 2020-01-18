@@ -17,6 +17,13 @@ namespace Microsoft.MixedReality.Toolkit.UI
     [HelpURL("https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Tooltip.html")]
     public class ToolTip : MonoBehaviour
     {
+        /// <summary>
+        /// SpaceAR custom labels
+        /// </summary>
+        /// 
+        
+
+
         [SerializeField]
         [Tooltip("Show the opaque background of tooltip.")]
         private bool showBackground = true;
@@ -141,11 +148,14 @@ namespace Microsoft.MixedReality.Toolkit.UI
         {
             set
             {
-                toolTipText = value;
+                //toolTipText = value;
+                toolTipText = "test string";
+                ToolTipText = "test string";
                 if (!Application.isPlaying)
                 {   // Only force refresh in edit mode
                     RefreshLocalContent();
                 }
+
             }
             get { return toolTipText; }
         }
