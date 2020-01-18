@@ -9,12 +9,14 @@ using UnityEngine;
 
 namespace Microsoft.MixedReality.Toolkit.UI
 {
+    
     /// <summary>
     /// A slider that can be moved by grabbing / pinching a slider thumb
     /// </summary>
     [HelpURL("https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Sliders.html")]
     public class PinchSlider : MonoBehaviour, IMixedRealityPointerHandler, IMixedRealityFocusHandler
     {
+        public static float mySliderVal;
         #region Serialized Fields and Properties
         [Tooltip("The gameObject that contains the slider thumb.")]
         [SerializeField]
@@ -44,6 +46,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
                 sliderValue = value;
                 UpdateUI();
                 OnValueUpdated.Invoke(new SliderEventData(oldSliderValue, value, activePointer, this));
+                mySliderVal = sliderValue;
             }
         }
 

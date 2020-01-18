@@ -201,7 +201,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         for (int i = 0; i < scores.Length; i++)
         {
 
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.1f * i) - 1, 0, 1.2f), new Quaternion());
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.1f * i) - 0.3f, 0, 1.2f), new Quaternion());
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
 

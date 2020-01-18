@@ -15,7 +15,7 @@ public class NonUniformScale : MonoBehaviour
 
     private Vector3 initialScale;
 
-    private const float defaultHandleScale = 0.1f;
+    private const float defaultHandleScale = 0.01f;
 
     private void Start()
     {

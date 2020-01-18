@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.MixedReality.Toolkit.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class ScaleBarColor : MonoBehaviour
     Color bad = new Color(0.913f, 0.078f, 0.313f);
     Color good = new Color(0.498f, 0.498f, 0.078f);
 
-    float maximumSliderHeight = 1f;
+    float maximumSliderHeight = 0.4f;
 
     Color objectColor;
 
@@ -29,6 +30,7 @@ public class ScaleBarColor : MonoBehaviour
 
         var barHeight = this.transform.localScale.y;
         var percentage = barHeight / maximumSliderHeight;
+        //float percentage = PinchSlider.mySliderVal;
 
         // mix bad color with good color
 
@@ -38,6 +40,7 @@ public class ScaleBarColor : MonoBehaviour
         this.GetComponent<MeshRenderer>().material.color = objectColor;
 
     }
+
 
     Color MixTwoColors (Color one, Color two, float factor)
     {
