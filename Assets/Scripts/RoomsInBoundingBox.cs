@@ -47,8 +47,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     float scaleMax = 1;
 
-    float targetScaleMin = 0.50f;
-    float targetScaleMax = 0.20f;
+    float targetScaleMin = 0.2f;
+    float targetScaleMax = 0f;
 
     public List<Timestamp> timeLine;
     GameObject[] objects;
@@ -135,7 +135,7 @@ public class RoomsInBoundingBox : MonoBehaviour
             }
 
             GetScores();
-            UpdateSliders(scores, 1f);
+            UpdateSliders(scores, .8f);
 
             positionChanged = CheckPositionChanged();
 
@@ -201,7 +201,9 @@ public class RoomsInBoundingBox : MonoBehaviour
         for (int i = 0; i < scores.Length; i++)
         {
 
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.1f * i) - 0.3f, 0, 1.2f), new Quaternion());
+
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1f, 1.2f), new Quaternion());
+
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
 
@@ -242,7 +244,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
 
             sliders[i].transform.localScale = new Vector3(scaleX, (scores[i] * barScaler), scaleZ);
-            sliders[i].transform.position = new Vector3(posX, ((scores[i] * barScaler) / 2), posZ);
+            sliders[i].transform.position = new Vector3(posX, ((scores[i] * barScaler) / 2) + 0.05f, posZ);
         }
     }
 
