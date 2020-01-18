@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 public class RoomsInBoundingBox : MonoBehaviour
 {
     public GameObject plane;
-    
+
     // objects
     public GameObject workingSpaceA;
     public GameObject workingSpaceB;
@@ -24,7 +25,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     // ui
     public GameObject feedbackSlider;
 
- 
+
     List<GameObject> rooms = new List<GameObject>();
 
     List<GameObject> instantiated = new List<GameObject>();
@@ -34,25 +35,35 @@ public class RoomsInBoundingBox : MonoBehaviour
     float width;
     float depth;
 
-    GameObject _wsA, _wsB, _wsC, 
-        _mentors , _kitchen, _relax, 
+    GameObject _wsA, _wsB, _wsC,
+        _mentors, _kitchen, _relax,
         _bathroom, _common, _core, _keynote,
         _hardware;
 
 
-    public float [] scores;
+    public float[] scores;
     public GameObject[] sliders;
 
 
     float scaleMax = 1;
 
     float targetScaleMin = 0.80f;
-    float targetScaleMax = -0.0f;
+    float targetScaleMax = -0.80f;
+
+    public List<Timestamp> timeLine;
+    GameObject[] objects;
+
+    bool positionChanged = true;
+    public bool DisplayHistory = false;
+    public float historyStep = 0.7f;
+    bool runningTimestamp = false;
 
     // Start is called before the first frame update
     void Start()
     {
         scores = new float[8];
+        timeLine = new List<Timestamp>();
+        objects = new GameObject[11];
 
         // general
         position = this.transform.position;
@@ -60,29 +71,106 @@ public class RoomsInBoundingBox : MonoBehaviour
         depth = this.transform.localScale.z;
 
         // rooms
-        _wsA = Object.Instantiate(workingSpaceA);
-        _wsB = Object.Instantiate(workingSpaceB);
-        _wsC = Object.Instantiate(workingSpaceC);
+        _wsA = UnityEngine.Object.Instantiate(workingSpaceA);
+        _wsB = UnityEngine.Object.Instantiate(workingSpaceB);
+        _wsC = UnityEngine.Object.Instantiate(workingSpaceC);
 
-        _kitchen = Object.Instantiate(Kitchen);
-        _bathroom = Object.Instantiate(Bathrooms);
-        _relax = Object.Instantiate(Relaxation);
-        _mentors = Object.Instantiate(Mentors);
-        _relax = Object.Instantiate(Relaxation);
-        _common = Object.Instantiate(Common);
-        _keynote = Object.Instantiate(Keynote);
-        _core = Object.Instantiate(Core);
-        _hardware = Object.Instantiate(Hardware);
+        _kitchen = UnityEngine.Object.Instantiate(Kitchen);
+        _bathroom = UnityEngine.Object.Instantiate(Bathrooms);
+        _relax = UnityEngine.Object.Instantiate(Relaxation);
+        _mentors = UnityEngine.Object.Instantiate(Mentors);
+        _relax = UnityEngine.Object.Instantiate(Relaxation);
+        _common = UnityEngine.Object.Instantiate(Common);
+        _keynote = UnityEngine.Object.Instantiate(Keynote);
+        _core = UnityEngine.Object.Instantiate(Core);
+        _hardware = UnityEngine.Object.Instantiate(Hardware);
 
         // ui
+        GetScores();
         sliders = DisplaySliders(scores, feedbackSlider);
 
+        AddObjectsToArray();
 
-        
+        var stamp = new Timestamp(objects, scores);
+        timeLine.Add(stamp);
+        Debug.Log("timestamp added");
+
+
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+        if (DisplayHistory)
+        {
+
+            runningTimestamp = true;
+
+            int index = (int)Math.Round(historyStep * timeLine.Count);
+
+            for (int i = 0; i < objects.Length; i++)
+            {
+                objects[i].transform.position = timeLine[index].positions[i];
+                objects[i].transform.localScale = timeLine[index].scale[i];
+            }
+        }
+
+        else
+        {
+            if (runningTimestamp)
+            {
+                for (int i = 0; i < objects.Length; i++)
+                {
+                    objects[i].transform.position = timeLine[timeLine.Count-1].positions[i];
+                    objects[i].transform.localScale = timeLine[timeLine.Count - 1].scale[i];
+                }
+
+                runningTimestamp = false;
+            }
+
+            GetScores();
+            UpdateSliders(scores, 1f);
+
+            positionChanged = CheckPositionChanged();
+
+            if (positionChanged)
+            {
+                var stamp = new Timestamp(objects, scores);
+
+                timeLine.Add(stamp);
+                Debug.Log("timestamp added");
+            }
+        }
+
+
+
+    }
+
+
+    bool CheckPositionChanged()
+    {
+        var lastStamp = timeLine[timeLine.Count - 1];
+
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (objects[i].transform.position.x != lastStamp.positions[i].x
+                || objects[i].transform.position.y != lastStamp.positions[i].y
+                || objects[i].transform.position.z != lastStamp.positions[i].z
+                || objects[i].transform.localScale.x != lastStamp.scale[i].x
+                || objects[i].transform.localScale.y != lastStamp.scale[i].y
+                || objects[i].transform.localScale.z != lastStamp.scale[i].z
+                )
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    void GetScores()
     {
         scores[0] = GetScore1(_wsA, _wsB, _wsC, _mentors);
         scores[1] = GetScore1(_wsA, _wsB, _wsC, _mentors);
@@ -100,23 +188,37 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         scores[2] = -scores[2];
 
-
-        UpdateSliders(scores, 1f);
     }
 
-    GameObject[] DisplaySliders (float[] scores, GameObject slider)
+    GameObject[] DisplaySliders(float[] scores, GameObject slider)
     {
         GameObject[] sliders = new GameObject[scores.Length];
 
         for (int i = 0; i < scores.Length; i++)
         {
-            sliders[i] = Object.Instantiate(slider, new Vector3((0.1f*i) - 0.4f , 0, 3), new Quaternion());
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.1f * i) - 1, 0, 3), new Quaternion());
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
         }
 
         return sliders;
     }
+
+    void AddObjectsToArray()
+    {
+        objects[0] = _wsA;
+        objects[1] = _wsB;
+        objects[2] = _wsC;
+        objects[3] = _kitchen;
+        objects[4] = _bathroom;
+        objects[5] = _relax;
+        objects[6] = _mentors;
+        objects[7] = _common;
+        objects[8] = _keynote;
+        objects[9] = _core;
+        objects[10] = _hardware;
+    }
+
 
     void UpdateSliders(float[] scores, float barScaler)
     {
@@ -153,7 +255,7 @@ public class RoomsInBoundingBox : MonoBehaviour
                 location = Utilities.GenerateRoomLocationBasedOnAnotherRoom(rooms[i], instantiated[i - 1], instantiated);
             }
 
-            instantiated.Add(Object.Instantiate(rooms[i], location, new Quaternion()));
+            instantiated.Add(UnityEngine.Object.Instantiate(rooms[i], location, new Quaternion()));
         }
     }
 
