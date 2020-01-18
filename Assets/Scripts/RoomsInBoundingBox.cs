@@ -46,8 +46,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     float scaleMax = 1;
 
-    float targetScaleMin = 0.80f;
-    float targetScaleMax = -0.0f;
+    float targetScaleMin = 0.50f;
+    float targetScaleMax = 0.20f;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +76,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         // ui
         sliders = DisplaySliders(scores, feedbackSlider);
+        //text
+
 
 
         
@@ -98,7 +100,7 @@ public class RoomsInBoundingBox : MonoBehaviour
             scores[i] = Remap(scores[i], 0, scaleMax, targetScaleMin, targetScaleMax);
         }
 
-        scores[2] = -scores[2];
+        scores[2] = targetScaleMin - scores[2];
 
 
         UpdateSliders(scores, 1f);
@@ -110,9 +112,11 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         for (int i = 0; i < scores.Length; i++)
         {
-            sliders[i] = Object.Instantiate(slider, new Vector3((0.1f*i) - 0.4f , 0, 3), new Quaternion());
+            sliders[i] = Object.Instantiate(slider, new Vector3((0.1f*i) - 0.4f , 0, 1.2f), new Quaternion());
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
+
+
         }
 
         return sliders;
