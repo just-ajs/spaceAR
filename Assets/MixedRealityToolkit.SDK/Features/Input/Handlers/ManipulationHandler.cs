@@ -605,6 +605,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
             }
             if ((currentState & State.Scaling) > 0)
             {
+                //targetScale = scaleLogic.UpdateMap(handPositionMap);
                 targetScale = scaleLogic.UpdateMap(handPositionMap);
             }
 
