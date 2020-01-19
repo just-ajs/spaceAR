@@ -46,7 +46,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     public GameObject[] sliders;
 
 
-    float scaleMax = 1;
+    float scaleMax = 0.5f;
 
     float targetScaleMin = 0.2f;
     float targetScaleMax = 0f;
@@ -204,7 +204,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         {
 
 
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1f, 1.2f), new Quaternion());
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.05f, 1.2f), new Quaternion());
 
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
@@ -240,13 +240,15 @@ public class RoomsInBoundingBox : MonoBehaviour
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
             float posX = sliders[i].transform.position.x;
             float posZ = sliders[i].transform.position.z;
+            float posY = sliders[i].transform.position.y;
 
-            float scaleX = this.transform.localScale.x;
-            float scaleZ = this.transform.localScale.z;
+            float scaleX = sliders[i].transform.localScale.x;
+            float scaleZ = sliders[i].transform.localScale.z;
 
+            float multiplier = Math.Abs(scores[i] * barScaler);
 
-            sliders[i].transform.localScale = new Vector3(scaleX, (scores[i] * barScaler), scaleZ);
-            sliders[i].transform.position = new Vector3(posX, ((scores[i] * barScaler) / 2) + 0.05f, posZ);
+            sliders[i].transform.localScale = new Vector3(scaleX, multiplier, scaleZ);
+            sliders[i].transform.position = new Vector3(posX, (multiplier / 2) , posZ);
         }
     }
 
