@@ -16,8 +16,8 @@ public class TooltipText_Hacker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var areafoot = x.SquareFootArea;
-        var areamet = x.SquareMetersArea;
+        int areafoot = (int)x.SquareFootArea;
+        int areamet = (int)x.SquareMetersArea;
 
         var ppl = x.hackers;
 
