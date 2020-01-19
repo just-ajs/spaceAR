@@ -26,7 +26,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     // ui
     public GameObject feedbackSlider;
 
-    int[] array2 = new int[] { 1, 3, 5, 7, 9 }
+    int[] array2 = new int[] { 1, 3, 5, 7, 9 };
     //public string[] scoreBarText = new string[] {"Hackers\nx\nMentors", "} >;
 
 
