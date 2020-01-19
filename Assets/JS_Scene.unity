@@ -2190,14 +2190,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 1222361199}
-  workingSpaceA: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceA: {fileID: 4141357328177531959, guid: da1ad36afb44e6948bbbcef9557847c3,
     type: 3}
-  workingSpaceB: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceB: {fileID: 6023543275654724985, guid: f2dbfb6e116943d47b6cabbdba064f9f,
     type: 3}
-  workingSpaceC: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceC: {fileID: 740362797275583052, guid: 14e2b5fc70c076640b473827ad3a440a,
     type: 3}
   Kitchen: {fileID: 1578315643183697464, guid: a38518fdb57f69f4bb459a4a796e0c0f, type: 3}
-  Bathrooms: {fileID: 584087049790120684, guid: 0b7f1465cf17ec042bf1696612a66c1b,
+  Bathrooms: {fileID: 1578315643183697464, guid: e0a74b424396927449e4d61edd669f06,
     type: 3}
   Relaxation: {fileID: 1578315643183697464, guid: 0bd7d7f525b53894b8f6acb46c863b0e,
     type: 3}

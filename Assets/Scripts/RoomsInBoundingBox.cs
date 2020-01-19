@@ -96,7 +96,6 @@ public class RoomsInBoundingBox : MonoBehaviour
         _bathroom = UnityEngine.Object.Instantiate(Bathrooms);
         _relax = UnityEngine.Object.Instantiate(Relaxation);
         _mentors = UnityEngine.Object.Instantiate(Mentors);
-        _relax = UnityEngine.Object.Instantiate(Relaxation);
         _common = UnityEngine.Object.Instantiate(Common);
         _keynote = UnityEngine.Object.Instantiate(Keynote);
         _core = UnityEngine.Object.Instantiate(Core);
@@ -233,9 +232,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         for (int i = 0; i < texts.Length; i++)
         {
             texts[i] = UnityEngine.Object.Instantiate(textPrefab, new Vector3((0.05f * i) - 0.175f, 0.02f, 1.17f), new Quaternion());
-            Debug.Log(texts[i].name);
             GameObject textObject = texts[i].transform.GetChild(1).gameObject;
-            Debug.Log(textObject.name);
             textObject.GetComponent<TextMeshProUGUI>().text = barText[i];
             //grandChild = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
         }

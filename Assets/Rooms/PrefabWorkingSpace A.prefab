@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1578315643183697464
+--- !u!1 &4141357328177531959
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,54 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 320073057285103678}
-  - component: {fileID: 6810429207916404078}
-  - component: {fileID: 339159964177483656}
-  - component: {fileID: 3061502900677383023}
-  - component: {fileID: 8469932725177371}
-  - component: {fileID: 4669482053975978918}
-  - component: {fileID: 999666603413037}
-  - component: {fileID: 1831359316061563984}
-  - component: {fileID: -4654887900048182378}
-  - component: {fileID: -7171826676806686817}
-  - component: {fileID: 9137179468265871335}
-  - component: {fileID: 6604437394206842439}
+  - component: {fileID: 2949685702611526193}
+  - component: {fileID: 8222942295157038945}
+  - component: {fileID: 2894322572584207751}
+  - component: {fileID: 3206655708762770964}
+  - component: {fileID: 7805606817523773865}
+  - component: {fileID: 3214952252470578210}
+  - component: {fileID: 3887741874892451423}
+  - component: {fileID: 8201563876804899164}
+  - component: {fileID: 1533533780085043537}
+  - component: {fileID: 8591161553319025736}
   m_Layer: 0
-  m_Name: PrefabBathrooms
+  m_Name: PrefabWorkingSpace A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &320073057285103678
+--- !u!4 &2949685702611526193
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.095, y: 0, z: 0.86}
-  m_LocalScale: {x: 0.06, y: 0.016, z: 0.1}
+  m_LocalPosition: {x: -0.106, y: 0, z: 1.02}
+  m_LocalScale: {x: 0.12, y: 0.016, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6810429207916404078
+--- !u!33 &8222942295157038945
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &339159964177483656
+--- !u!23 &2894322572584207751
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2faaf4b6b60546b448f404298a42055e, type: 2}
+  - {fileID: 2100000, guid: a50237e3265fe9149a16e889fd8d8b4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,41 +85,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3061502900677383023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ee2b0edddd89d42b63fbd4ac64401a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SquareFootArea: 0
-  SquareMetersArea: 0
-  hackers: 0
---- !u!65 &8469932725177371
+--- !u!65 &3206655708762770964
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4669482053975978918
+--- !u!114 &7805606817523773865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98c748f3768ab714a8449b60fb9edc5c, type: 3}
@@ -133,21 +116,21 @@ MonoBehaviour:
   localUp: {x: 0, y: 1, z: 0}
   localCenter: {x: 0, y: 0, z: 0.5}
   bounds: {x: 1, y: 1}
-  touchableCollider: {fileID: 8469932725177371}
---- !u!114 &999666603413037
+  touchableCollider: {fileID: 3206655708762770964}
+--- !u!114 &3214952252470578210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23f9be7a3cb53794ead8b55e784b65aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1578315643183697464}
-  boundsOverride: {fileID: 8469932725177371}
+  targetObject: {fileID: 4141357328177531959}
+  boundsOverride: {fileID: 3206655708762770964}
   boundsCalculationMethod: 0
   activation: 4
   scaleMinimum: 0.2
@@ -201,19 +184,19 @@ MonoBehaviour:
   ScaleStopped:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1831359316061563984
+--- !u!114 &3887741874892451423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03daa81ea5f685f4ebf6e32038d058ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hostTransform: {fileID: 320073057285103678}
+  hostTransform: {fileID: 2949685702611526193}
   manipulationType: 2
   twoHandedManipulationType: 5
   allowFarManipulation: 1
@@ -237,57 +220,43 @@ MonoBehaviour:
   OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-4654887900048182378
+--- !u!114 &8201563876804899164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a493b0756c5b1b408b546e3d951a2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7171826676806686817
+--- !u!114 &1533533780085043537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 368f6d4bf8d71c54d9f18cf9ff400a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9137179468265871335
+--- !u!114 &8591161553319025736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 128848a1637b1ee4d9d14a3ead913ae5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scalerObject: {fileID: 0}
-  toolTip: {fileID: 0}
---- !u!114 &6604437394206842439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578315643183697464}
+  m_GameObject: {fileID: 4141357328177531959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820f94d57893bf843a0cd6d93313fe6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 320073057285103678}
+  targetTransform: {fileID: 2949685702611526193}
   scaleMinimum: 0.2
   scaleMaximum: 2
   relativeToInitialState: 1
