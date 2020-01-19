@@ -2195,23 +2195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 1222361199}
-  workingSpaceA: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceA: {fileID: 584087049790120684, guid: 48fd2dd594643d041805893917fe05ee,
     type: 3}
-  workingSpaceB: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceB: {fileID: 584087049790120684, guid: 48fd2dd594643d041805893917fe05ee,
     type: 3}
-  workingSpaceC: {fileID: 1578315643183697464, guid: 4d7005078ccdce743814e603b292eceb,
+  workingSpaceC: {fileID: 584087049790120684, guid: 48fd2dd594643d041805893917fe05ee,
     type: 3}
-  Kitchen: {fileID: 1578315643183697464, guid: a38518fdb57f69f4bb459a4a796e0c0f, type: 3}
+  Kitchen: {fileID: 584087049790120684, guid: d639ea86d2517de44a9c5387654a25a1, type: 3}
   Bathrooms: {fileID: 584087049790120684, guid: 0b7f1465cf17ec042bf1696612a66c1b,
     type: 3}
-  Relaxation: {fileID: 1578315643183697464, guid: 0bd7d7f525b53894b8f6acb46c863b0e,
+  Relaxation: {fileID: 584087049790120684, guid: 22108d5d906a53941a57441d6cad852a,
     type: 3}
-  Common: {fileID: 1578315643183697464, guid: b7eccd84cb4075c48b5dd85e6bcacd35, type: 3}
-  Keynote: {fileID: 1578315643183697464, guid: 12575fc0fe775664ab4c54e72881f0c8, type: 3}
-  Core: {fileID: 1578315643183697464, guid: b3b8715bd226c594aba34571d1a42d83, type: 3}
-  Mentors: {fileID: 1578315643183697464, guid: 09118cf4f49a7574889879960f4c71ba, type: 3}
-  Hardware: {fileID: 1578315643183697464, guid: fbb93141a320f204e8be475fe076940a,
-    type: 3}
+  Common: {fileID: 584087049790120684, guid: 1b7e511e05f4cf949b15500094046e0e, type: 3}
+  Keynote: {fileID: 584087049790120684, guid: c50d0207bc2b2e94b894154df8a33dae, type: 3}
+  Core: {fileID: 584087049790120684, guid: b3472ae3d3fd96b49b65bbdfdb6a91dc, type: 3}
+  Mentors: {fileID: 584087049790120684, guid: b668a2c9246991745a462884273ca783, type: 3}
+  Hardware: {fileID: 584087049790120684, guid: 141e3d27ea8b19b4c894d461e9b7c739, type: 3}
   feedbackSlider: {fileID: 104637194162546161, guid: 83ab0a12f71c2bb4982c21608eef2d47,
     type: 3}
   scores: []

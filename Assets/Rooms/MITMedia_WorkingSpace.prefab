@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3536965448972305370}
+  - component: {fileID: -6084862750572063032}
   m_Layer: 0
   m_Name: MITMedia_WorkingSpace
   m_TagString: Untagged
@@ -33,6 +34,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6084862750572063032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584087049790120684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4c54901e0d8d44385ef27d563c68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myChildCube: {fileID: 3962910460064484514}
+  goPos: {x: 0, y: 0, z: 0}
+  boilerEmpty: {fileID: 5172358108387664348, guid: 05d77aa16770d9142a0cbb7a130dd740,
+    type: 3}
+  myNewEmpty: {fileID: 0}
 --- !u!114 &2140088782688538611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,12 +191,12 @@ PrefabInstance:
     - target: {fileID: 4194586293298924571, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.a
-      value: 7.8150214e-10
+      value: 4.2982617e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4194586293298924571, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key1.a
-      value: 7.8150214e-10
+      value: 4.2982617e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4194586293298924571, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}
@@ -198,12 +216,12 @@ PrefabInstance:
     - target: {fileID: 4182190286914310159, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}
       propertyPath: lineColor.key0.a
-      value: 7.8150214e-10
+      value: 4.2982617e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4182190286914310159, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}
       propertyPath: lineColor.key1.a
-      value: 7.8150214e-10
+      value: 4.2982617e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4181871975583984129, guid: 84befe3902d057143abff3c4d6c87b85,
         type: 3}

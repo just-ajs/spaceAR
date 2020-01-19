@@ -56,6 +56,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     public List<Timestamp> timeLine;
     GameObject[] objects;
+    GameObject[] objectPositions;
 
     bool positionChanged = true;
     public bool DisplayHistory = false;
@@ -69,6 +70,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         scores = new float[8];
         timeLine = new List<Timestamp>();
         objects = new GameObject[11];
+        objectPositions = new GameObject[11];
 
         // general
         position = this.transform.position;
@@ -97,8 +99,9 @@ public class RoomsInBoundingBox : MonoBehaviour
 
 
         AddObjectsToArray();
+        AddObjectositionsToArray();
 
-        var stamp = new Timestamp(objects, scores);
+        var stamp = new Timestamp(objectPositions, scores);
         timeLine.Add(stamp);
         Debug.Log("timestamp added");
 
@@ -109,6 +112,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (DisplayHistory)
         {
@@ -119,8 +123,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
             for (int i = 0; i < objects.Length; i++)
             {
-                objects[i].transform.position = timeLine[index].positions[i];
-                objects[i].transform.localScale = timeLine[index].scale[i];
+                objectPositions[i].transform.position = timeLine[index].positions[i];
+                objectPositions[i].transform.localScale = timeLine[index].scale[i];
             }
         }
 
@@ -132,8 +136,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
                 for (int i = 0; i < objects.Length; i++)
                 {
-                    objects[i].transform.position = timeLine[timeLine.Count-1].positions[i];
-                    objects[i].transform.localScale = timeLine[timeLine.Count - 1].scale[i];
+                    objectPositions[i].transform.position = timeLine[timeLine.Count-1].positions[i];
+                    objectPositions[i].transform.localScale = timeLine[timeLine.Count - 1].scale[i];
                 }
 
                 runningTimestamp = false;
@@ -146,7 +150,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
             if (positionChanged)
             {
-                var stamp = new Timestamp(objects, scores);
+                var stamp = new Timestamp(objectPositions, scores);
 
                 timeLine.Add(stamp);
                 Debug.Log("timestamp added");
@@ -164,12 +168,12 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         for (int i = 0; i < objects.Length; i++)
         {
-            if (objects[i].transform.position.x != lastStamp.positions[i].x
-                || objects[i].transform.position.y != lastStamp.positions[i].y
-                || objects[i].transform.position.z != lastStamp.positions[i].z
-                || objects[i].transform.localScale.x != lastStamp.scale[i].x
-                || objects[i].transform.localScale.y != lastStamp.scale[i].y
-                || objects[i].transform.localScale.z != lastStamp.scale[i].z
+            if (objectPositions[i].transform.position.x != lastStamp.positions[i].x
+                || objectPositions[i].transform.position.y != lastStamp.positions[i].y
+                || objectPositions[i].transform.position.z != lastStamp.positions[i].z
+                || objectPositions[i].transform.localScale.x != lastStamp.scale[i].x
+                || objectPositions[i].transform.localScale.y != lastStamp.scale[i].y
+                || objectPositions[i].transform.localScale.z != lastStamp.scale[i].z
                 )
             {
                 return true;
@@ -181,14 +185,14 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     void GetScores()
     {
-        scores[0] = GetScore1(_wsA, _wsB, _wsC, _mentors);
-        scores[1] = GetScore1(_wsA, _wsB, _wsC, _mentors);
-        scores[2] = GetScore1(_wsA, _wsB, _wsC, plane);
-        scores[3] = GetScore5(_kitchen, _relax);
-        scores[4] = GetScore5(_common, _keynote);
-        scores[5] = GetScore5(_common, _bathroom);
-        scores[6] = GetScore5(_hardware, _mentors);
-        scores[7] = GetScore5(_kitchen, _common);
+        scores[0] = GetScore1(_wsA.GetComponent<getXYZ>().myNewEmpty, _wsB.GetComponent<getXYZ>().myNewEmpty, _wsC.GetComponent<getXYZ>().myNewEmpty, _mentors.GetComponent<getXYZ>().myNewEmpty);
+        scores[1] = GetScore1(_wsA.GetComponent<getXYZ>().myNewEmpty, _wsB.GetComponent<getXYZ>().myNewEmpty, _wsC.GetComponent<getXYZ>().myNewEmpty, _mentors.GetComponent<getXYZ>().myNewEmpty);
+        scores[2] = GetScore1(_wsA.GetComponent<getXYZ>().myNewEmpty, _wsB.GetComponent<getXYZ>().myNewEmpty, _wsC.GetComponent<getXYZ>().myNewEmpty, plane);
+        scores[3] = GetScore5(_kitchen.GetComponent<getXYZ>().myNewEmpty, _relax.GetComponent<getXYZ>().myNewEmpty);
+        scores[4] = GetScore5(_common.GetComponent<getXYZ>().myNewEmpty, _keynote.GetComponent<getXYZ>().myNewEmpty);
+        scores[5] = GetScore5(_common.GetComponent<getXYZ>().myNewEmpty, _bathroom.GetComponent<getXYZ>().myNewEmpty);
+        scores[6] = GetScore5(_hardware.GetComponent<getXYZ>().myNewEmpty, _mentors.GetComponent<getXYZ>().myNewEmpty);
+        scores[7] = GetScore5(_kitchen.GetComponent<getXYZ>().myNewEmpty, _common.GetComponent<getXYZ>().myNewEmpty);
 
         for (int i = 0; i < scores.Length; i++)
         {
@@ -231,6 +235,21 @@ public class RoomsInBoundingBox : MonoBehaviour
         objects[8] = _keynote;
         objects[9] = _core;
         objects[10] = _hardware;
+    }
+
+    void AddObjectositionsToArray()
+    {
+        objectPositions[0] = _wsA.GetComponent<getXYZ>().myChildCube;
+        objectPositions[1] = _wsB.GetComponent<getXYZ>().myChildCube;
+        objectPositions[2] = _wsC.GetComponent<getXYZ>().myChildCube;
+        objectPositions[3] = _kitchen.GetComponent<getXYZ>().myChildCube;
+        objectPositions[4] = _bathroom.GetComponent<getXYZ>().myChildCube;
+        objectPositions[5] = _relax.GetComponent<getXYZ>().myChildCube;
+        objectPositions[6] = _mentors.GetComponent<getXYZ>().myChildCube;
+        objectPositions[7] = _common.GetComponent<getXYZ>().myChildCube;
+        objectPositions[8] = _keynote.GetComponent<getXYZ>().myChildCube;
+        objectPositions[9] = _core.GetComponent<getXYZ>().myChildCube;
+        objectPositions[10] = _hardware.GetComponent<getXYZ>().myChildCube;
     }
 
 
