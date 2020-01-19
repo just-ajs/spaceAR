@@ -56,7 +56,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     bool positionChanged = true;
     public bool DisplayHistory = false;
-    public float historyStep = 0.7f;
+    public float historyStep= 0f;
     bool runningTimestamp = false;
     bool isShowingBarGraph = true;
 
@@ -204,7 +204,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         {
 
 
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.05f, 1.2f), new Quaternion());
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.25f, 1.2f), new Quaternion());
 
 
             //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
@@ -248,7 +248,7 @@ public class RoomsInBoundingBox : MonoBehaviour
             float multiplier = Math.Abs(scores[i] * barScaler);
 
             sliders[i].transform.localScale = new Vector3(scaleX, multiplier, scaleZ);
-            sliders[i].transform.position = new Vector3(posX, (multiplier / 2) , posZ);
+            sliders[i].transform.position = new Vector3(posX, (multiplier / 2) + 0.05f, posZ);
         }
     }
 
@@ -321,9 +321,13 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     public void HistorySliderChanging(SliderEventData data)
     {
+        Debug.Log("Value: " + data.NewValue.ToString());
         historyStep = data.NewValue;
     }
 
-
+    public void OnSliderUpdated(SliderEventData data)
+    {
+        Debug.Log("Test value: " + data.NewValue.ToString());
+    }
 
 }
