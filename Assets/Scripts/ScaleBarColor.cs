@@ -12,7 +12,7 @@ public class ScaleBarColor : MonoBehaviour
     Color bad = new Color(0.913f, 0.078f, 0.313f);
     Color good = new Color(0.498f, 0.498f, 0.078f);
 
-    float maximumSliderHeight = 0.4f;
+    float maximumSliderHeight = 0.15f;
 
     Color objectColor;
 
