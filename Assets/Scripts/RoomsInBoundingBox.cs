@@ -69,6 +69,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     public List<Timestamp> timeLine;
     GameObject[] objects;
     GameObject[] objectPositions;
+    GameObject[] objectPositions2;
 
     bool positionChanged = true;
     public bool DisplayHistory = false;
@@ -83,6 +84,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         timeLine = new List<Timestamp>();
         objects = new GameObject[11];
         objectPositions = new GameObject[11];
+        objectPositions2 = new GameObject[11];
 
         // general
         position = this.transform.position;
@@ -113,6 +115,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         AddObjectsToArray();
         AddObjectositionsToArray();
+        AddObjectositionsToArray2();
 
         var stamp = new Timestamp(objectPositions, scores);
         timeLine.Add(stamp);
@@ -272,6 +275,21 @@ public class RoomsInBoundingBox : MonoBehaviour
         objectPositions[8] = _keynote.GetComponent<getXYZ>().myChildCube;
         objectPositions[9] = _core.GetComponent<getXYZ>().myChildCube;
         objectPositions[10] = _hardware.GetComponent<getXYZ>().myChildCube;
+    }
+
+    void AddObjectositionsToArray2()
+    {
+        objectPositions[0] = _wsA.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[1] = _wsB.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[2] = _wsC.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[3] = _kitchen.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[4] = _bathroom.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[5] = _relax.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[6] = _mentors.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[7] = _common.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[8] = _keynote.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[9] = _core.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[10] = _hardware.GetComponent<getXYZ>().myNewEmpty;
     }
 
 

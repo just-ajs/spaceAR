@@ -306,7 +306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361204}
     - target: {fileID: 2070291447063185073, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -511,7 +511,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361204}
     - target: {fileID: 2070291447063185073, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -711,7 +711,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnValueUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361204}
     - target: {fileID: 7307063430618434848, guid: 1093263a89abe47499cccf7dcb08effb,
         type: 3}
       propertyPath: OnValueUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -771,7 +771,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnValueUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361204}
     - target: {fileID: 7307063430618434848, guid: 1093263a89abe47499cccf7dcb08effb,
         type: 3}
       propertyPath: OnValueUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -826,7 +826,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361204}
     - target: {fileID: 7307063430618434848, guid: 1093263a89abe47499cccf7dcb08effb,
         type: 3}
       propertyPath: OnInteractionStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2213,52 +2213,8 @@ MonoBehaviour:
   Hardware: {fileID: 584087049790120684, guid: 141e3d27ea8b19b4c894d461e9b7c739, type: 3}
   feedbackSlider: {fileID: 104637194162546161, guid: 83ab0a12f71c2bb4982c21608eef2d47,
     type: 3}
-  textPrefab: {fileID: 6285160148229321903, guid: 62ba827ea437ab44a895bd426d0d9b4b,
-    type: 3}
-  scoreBarText:
-  - 'Hackers
-
-    x
-
-    Mentors'
-  - 'Hackers
-
-    x
-
-    Bathrooms'
-  - 'Quiet
-
-    x
-
-    Kitchen'
-  - 'Hackers
-
-    x
-
-    Windows'
-  - 'Commons
-
-    x
-
-    Keynote'
-  - 'Commons
-
-    x
-
-    Bathroom'
-  - 'Hardware
-
-    x
-
-    Mentors'
-  - 'Kitchen
-
-    x
-
-    Commons'
   scores: []
   sliders: []
-  scoreTexts: []
   DisplayHistory: 0
   historyStep: 0
 --- !u!1 &1295500508 stripped
@@ -2501,7 +2457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222361199}
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
