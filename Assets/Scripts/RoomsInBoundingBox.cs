@@ -26,8 +26,8 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     // ui
     public GameObject feedbackSlider;
+
     public GameObject textPrefab;
-    //wip
     public string[] scoreBarText = new string[] {
     "Hackers\nx\nMentors",
     "Hackers\nx\nBathrooms",
@@ -38,6 +38,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     "Hardware\nx\nMentors",
     "Kitchen\nx\nCommons"
     };
+
 
 
     List<GameObject> rooms = new List<GameObject>();
