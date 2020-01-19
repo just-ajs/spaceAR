@@ -125,7 +125,7 @@ Material:
     - _HoverLightOpaque: 0
     - _IgnoreZScale: 0
     - _InnerGlow: 1
-    - _InnerGlowPower: 4.9
+    - _InnerGlowPower: 8.8
     - _InstancedColor: 0
     - _Iridescence: 0
     - _IridescenceAngle: -0.425
@@ -181,7 +181,7 @@ Material:
     - _EnvironmentColorZ: {r: 0.6544118, g: 0.86551, b: 1, a: 1}
     - _HoverColorOpaqueOverride: {r: 1, g: 1, b: 1, a: 1}
     - _HoverColorOverride: {r: 1, g: 1, b: 1, a: 1}
-    - _InnerGlowColor: {r: 1, g: 0.73324853, b: 0, a: 0.8666667}
+    - _InnerGlowColor: {r: 1, g: 1, b: 1, a: 0.8666667}
     - _ProximityLightCenterColorOverride: {r: 1, g: 0, b: 0, a: 0}
     - _ProximityLightMiddleColorOverride: {r: 0, g: 1, b: 0, a: 0.5}
     - _ProximityLightOuterColorOverride: {r: 0, g: 0, b: 1, a: 1}
