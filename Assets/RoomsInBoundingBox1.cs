@@ -4,9 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
-public class RoomsInBoundingBox : MonoBehaviour
+public class RoomsInBoundingBox1 : MonoBehaviour
 {
     public GameObject plane;
 
@@ -26,8 +27,18 @@ public class RoomsInBoundingBox : MonoBehaviour
     // ui
     public GameObject feedbackSlider;
 
-    int[] array2 = new int[] { 1, 3, 5, 7, 9 };
-    //public string[] scoreBarText = new string[] {"Hackers\nx\nMentors", "} >;
+    public GameObject textPrefab;
+    public string[] scoreBarText = new string[] {
+    "Hackers\nx\nMentors",
+    "Hackers\nx\nBathrooms",
+    "Quiet\nx\nKitchen",
+    "Hackers\nx\nWindows",
+    "Commons\nx\nKeynote",
+    "Commons\nx\nBathroom",
+    "Hardware\nx\nMentors",
+    "Kitchen\nx\nCommons"
+    };
+
 
 
     List<GameObject> rooms = new List<GameObject>();
@@ -47,6 +58,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     public float[] scores;
     public GameObject[] sliders;
+    public GameObject[] scoreTexts;
 
 
     float scaleMax = 0.5f;
@@ -57,6 +69,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     public List<Timestamp> timeLine;
     GameObject[] objects;
     GameObject[] objectPositions;
+    GameObject[] objectPositions2;
 
     bool positionChanged = true;
     public bool DisplayHistory = false;
@@ -71,6 +84,7 @@ public class RoomsInBoundingBox : MonoBehaviour
         timeLine = new List<Timestamp>();
         objects = new GameObject[11];
         objectPositions = new GameObject[11];
+        objectPositions2 = new GameObject[11];
 
         // general
         position = this.transform.position;
@@ -86,7 +100,6 @@ public class RoomsInBoundingBox : MonoBehaviour
         _bathroom = UnityEngine.Object.Instantiate(Bathrooms);
         _relax = UnityEngine.Object.Instantiate(Relaxation);
         _mentors = UnityEngine.Object.Instantiate(Mentors);
-        _relax = UnityEngine.Object.Instantiate(Relaxation);
         _common = UnityEngine.Object.Instantiate(Common);
         _keynote = UnityEngine.Object.Instantiate(Keynote);
         _core = UnityEngine.Object.Instantiate(Core);
@@ -95,11 +108,14 @@ public class RoomsInBoundingBox : MonoBehaviour
         // ui
         GetScores();
         sliders = DisplaySliders(scores, feedbackSlider);
+        scoreTexts = DisplayScoreText(scoreBarText, textPrefab);
+
         //text
 
 
         AddObjectsToArray();
         AddObjectositionsToArray();
+        AddObjectositionsToArray2();
 
         var stamp = new Timestamp(objectPositions, scores);
         timeLine.Add(stamp);
@@ -206,20 +222,29 @@ public class RoomsInBoundingBox : MonoBehaviour
     GameObject[] DisplaySliders(float[] scores, GameObject slider)
     {
         GameObject[] sliders = new GameObject[scores.Length];
-
+    
         for (int i = 0; i < scores.Length; i++)
         {
 
-
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.25f, 1.2f), new Quaternion());
-
-
-            //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
-
-
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.25f, 1.17f), new Quaternion());
         }
 
         return sliders;
+    }
+
+    GameObject[] DisplayScoreText(string[] barText, GameObject textPrefab)
+    {
+        GameObject[] texts = new GameObject[barText.Length];
+
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i] = UnityEngine.Object.Instantiate(textPrefab, new Vector3((0.05f * i) - 0.175f, 0.02f, 1.17f), new Quaternion());
+            GameObject textObject = texts[i].transform.GetChild(1).gameObject;
+            textObject.GetComponent<TextMeshProUGUI>().text = barText[i];
+            //grandChild = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        }
+
+        return texts;
     }
 
     void AddObjectsToArray()
@@ -250,6 +275,21 @@ public class RoomsInBoundingBox : MonoBehaviour
         objectPositions[8] = _keynote.GetComponent<getXYZ>().myChildCube;
         objectPositions[9] = _core.GetComponent<getXYZ>().myChildCube;
         objectPositions[10] = _hardware.GetComponent<getXYZ>().myChildCube;
+    }
+
+    void AddObjectositionsToArray2()
+    {
+        objectPositions[0] = _wsA.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[1] = _wsB.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[2] = _wsC.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[3] = _kitchen.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[4] = _bathroom.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[5] = _relax.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[6] = _mentors.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[7] = _common.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[8] = _keynote.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[9] = _core.GetComponent<getXYZ>().myNewEmpty;
+        objectPositions[10] = _hardware.GetComponent<getXYZ>().myNewEmpty;
     }
 
 
