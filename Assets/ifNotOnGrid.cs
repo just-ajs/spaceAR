@@ -23,7 +23,7 @@ public class ifNotOnGrid : MonoBehaviour
             //check to see if the scalar script is on, and if it is, turn it off
             //if (scalerObject.activeSelf == true) {
                 scalerObject.SetActive(false);
-                toolTip.SetActive(true);
+                //toolTip.SetActive(true);
            // }
             //turn off the scaler script
         }
@@ -31,7 +31,7 @@ public class ifNotOnGrid : MonoBehaviour
             //turn on the scaler gameobject
             //if (scalerObject.activeSelf == false) {
                 scalerObject.SetActive(true);
-                toolTip.SetActive(false);
+                //toolTip.SetActive(false);
             //}
             //check to see if the scalar script is off, and if it is, turn it on
         }
