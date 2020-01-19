@@ -6,8 +6,8 @@ public class ifItTouchesZero : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject myCubeParent;
-    public GameObject myPanel, myPanelParent;
+
+    public GameObject myPanel;
     bool wentBelowZero = false;
     void Start()
     {
@@ -15,20 +15,25 @@ public class ifItTouchesZero : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log(gameObject.transform.position.z);
         if (gameObject.transform.position.y <= -0.01 && wentBelowZero != true) {
-           
+
             Vector3 myPos = gameObject.transform.position;
-            
-            gameObject.transform.position = new Vector3(myPanel.transform.localPosition.x + myPanelParent.transform.position.x, 0, myPanel.transform.localPosition.z + myPanelParent.transform.position.z);
-            gameObject.transform.SetParent(myCubeParent.transform);
-            gameObject.transform.position = new Vector3(myPanel.transform.localPosition.x + myPanelParent.transform.position.x, 0, myPanel.transform.localPosition.z + myPanelParent.transform.position.z);
-            //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            gameObject.transform.position = new Vector3(myPanel.transform.localPosition.x, 0, myPanel.transform.localPosition.z );
+            gameObject.transform.parent = null;
+            gameObject.transform.position = new Vector3(myPanel.transform.localPosition.x, 0, myPanel.transform.localPosition.z );
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             wentBelowZero = true;
             //enable Zscript and other script
+            gameObject.GetComponent<moveToNearestGrid>().enabled = true;
+            gameObject.GetComponent<onReleaseZ>().enabled = true;
 
+        } else if (gameObject.transform.position.y <= -0.01) {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.0f, gameObject.transform.position.z);
+            gameObject.transform.parent = null;
         }
     }
 }
