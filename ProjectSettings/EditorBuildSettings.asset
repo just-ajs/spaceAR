@@ -53,7 +53,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LG-Scene.unity
     guid: ae509bf2b2ade1d47aa2d2fe9541ef72
-  - enabled: 1
+  - enabled: 0
     path: Assets/JS_Scene.unity
     guid: 8788185cb6ce64247976b2379486e64e
+  - enabled: 1
+    path: Assets/LG_Scene2.unity
+    guid: 39457b60c13f9c741bbdd7a140799665
   m_configObjects: {}
