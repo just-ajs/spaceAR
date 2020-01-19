@@ -28,6 +28,8 @@ public class ifItTouchesZero : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             wentBelowZero = true;
             //enable Zscript and other script
+            gameObject.GetComponent<moveToNearestGrid>().enabled = true;
+            gameObject.GetComponent<onReleaseZ>().enabled = true;
 
         } else if (gameObject.transform.position.y <= -0.01) {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.0f, gameObject.transform.position.z);
