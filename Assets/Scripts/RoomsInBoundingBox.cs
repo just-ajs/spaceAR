@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class RoomsInBoundingBox : MonoBehaviour
@@ -25,9 +26,18 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     // ui
     public GameObject feedbackSlider;
-
-    int[] array2 = new int[] { 1, 3, 5, 7, 9 }
-    //public string[] scoreBarText = new string[] {"Hackers\nx\nMentors", "} >;
+    public GameObject textPrefab;
+    //wip
+    public string[] scoreBarText = new string[] {
+    "Hackers\nx\nMentors",
+    "Hackers\nx\nBathrooms",
+    "Quiet\nx\nKitchen",
+    "Hackers\nx\nWindows",
+    "Commons\nx\nKeynote",
+    "Commons\nx\nBathroom",
+    "Hardware\nx\nMentors",
+    "Kitchen\nx\nCommons"
+    };
 
 
     List<GameObject> rooms = new List<GameObject>();
@@ -47,6 +57,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
     public float[] scores;
     public GameObject[] sliders;
+    public GameObject[] scoreTexts;
 
 
     float scaleMax = 0.5f;
@@ -93,6 +104,8 @@ public class RoomsInBoundingBox : MonoBehaviour
         // ui
         GetScores();
         sliders = DisplaySliders(scores, feedbackSlider);
+        scoreTexts = DisplayScoreText(scoreBarText, textPrefab);
+
         //text
 
 
@@ -202,20 +215,31 @@ public class RoomsInBoundingBox : MonoBehaviour
     GameObject[] DisplaySliders(float[] scores, GameObject slider)
     {
         GameObject[] sliders = new GameObject[scores.Length];
-
+    
         for (int i = 0; i < scores.Length; i++)
         {
 
-
-            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.25f, 1.2f), new Quaternion());
-
-
-            //sliders[i].transform.localScale = new Vector3(1, scores[i], 1);
-
-
+            sliders[i] = UnityEngine.Object.Instantiate(slider, new Vector3((0.05f * i)-0.175f, 1.25f, 1.17f), new Quaternion());
         }
 
         return sliders;
+    }
+
+    GameObject[] DisplayScoreText(string[] barText, GameObject textPrefab)
+    {
+        GameObject[] texts = new GameObject[barText.Length];
+
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i] = UnityEngine.Object.Instantiate(textPrefab, new Vector3((0.05f * i) - 0.175f, 0.02f, 1.17f), new Quaternion());
+            Debug.Log(texts[i].name);
+            GameObject textObject = texts[i].transform.GetChild(1).gameObject;
+            Debug.Log(textObject.name);
+            textObject.GetComponent<TextMeshProUGUI>().text = barText[i];
+            //grandChild = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        }
+
+        return texts;
     }
 
     void AddObjectsToArray()
