@@ -50,7 +50,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LG-Scene.unity
     guid: ae509bf2b2ade1d47aa2d2fe9541ef72
+  - enabled: 1
+    path: Assets/JS_Scene.unity
+    guid: 8788185cb6ce64247976b2379486e64e
   m_configObjects: {}
