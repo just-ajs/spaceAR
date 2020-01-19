@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Microsoft.MixedReality.Toolkit.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -57,6 +58,7 @@ public class RoomsInBoundingBox : MonoBehaviour
     public bool DisplayHistory = false;
     public float historyStep = 0.7f;
     bool runningTimestamp = false;
+    bool isShowingBarGraph = true;
 
     // Start is called before the first frame update
     void Start()
@@ -121,7 +123,7 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         else
         {
-            historyStep = 1f;
+            //historyStep = 1f;
             if (runningTimestamp)
             {
 
@@ -297,6 +299,27 @@ public class RoomsInBoundingBox : MonoBehaviour
 
         score = vectorA.magnitude;
         return score;
+    }
+
+    public void ToggleBarGraph()
+    {
+        isShowingBarGraph = !isShowingBarGraph;
+
+        for(int i = 0; i < sliders.Length; i++)
+        {
+            sliders[i].SetActive(isShowingBarGraph);
+        }
+    }
+
+    public void ToggleHistory()
+    {
+        DisplayHistory = !DisplayHistory;
+        //HistorySlider.SetActive(DisplayHistory);
+    }
+
+    public void HistorySliderChanging(SliderEventData data)
+    {
+        historyStep = data.NewValue;
     }
 
 
